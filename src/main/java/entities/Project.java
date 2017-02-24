@@ -29,6 +29,19 @@ public class Project {
 
     @Column(name = "COMMENT")
     private String comment;
+/*
+/предлагаю хранить информацию о ресурсах, затраченных на проект, возможно стоит завести отдельную таблицу для этого?
+    @Column
+    private String resources;
+
+    public String getResources() {
+        return resources;
+    }
+
+    public void setResources(String resources) {
+        this.resources = resources;
+    }
+*/
 
     public int getId() {
         return id;
