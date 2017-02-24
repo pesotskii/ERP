@@ -1,10 +1,8 @@
 package entities;
 
 import javax.persistence.*;
+import java.util.Date;
 
-/**
- * Created by Alexandr Zhilkin on 15.02.2017.
- */
 @Entity
 @Table(name = "USER")
 public class User {
@@ -32,6 +30,15 @@ public class User {
     @Column(name = "DEPARTMENT")
     //аналогично это должен быть внешний ключ
     private int department;
+
+    @Column(name = "Status")
+    private String status;
+
+    @Column(name = "START_DATE")
+    private Date start_date;
+
+    @Column(name = "FINISH_DATE")
+    private Date finish_date;
 
     public int getId() {
         return id;

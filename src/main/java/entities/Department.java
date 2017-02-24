@@ -2,9 +2,6 @@ package entities;
 
 import javax.persistence.*;
 
-/**
- * Created by Alexandr Zhilkin on 15.02.2017.
- */
 @Entity
 @Table(name = "DEPARTMENT")
 public class Department {

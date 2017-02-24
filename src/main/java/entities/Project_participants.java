@@ -5,9 +5,6 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 import java.util.Date;
 
-/**
- * Created by Alexandr Zhilkin on 15.02.2017.
- */
 @Entity
 @Table(name = "PROJECT_PARTICIPANTS")
 public class Project_participants {

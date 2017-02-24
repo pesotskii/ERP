@@ -3,9 +3,6 @@ package entities;
 import javax.persistence.*;
 import java.util.Date;
 
-/**
- * Created by Alexandr Zhilkin on 15.02.2017.
- */
 @Entity
 @Table(name = "PROJECT")
 public class Project {
