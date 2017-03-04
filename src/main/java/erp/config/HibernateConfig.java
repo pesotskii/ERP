@@ -1,24 +1,26 @@
-package config;
+package erp.config;
+        import org.hibernate.SessionFactory;
+        import org.springframework.beans.factory.annotation.Autowired;
+        import org.springframework.context.annotation.Bean;
+        import org.springframework.context.annotation.ComponentScan;
+        import org.springframework.context.annotation.Configuration;
+        import org.springframework.context.annotation.PropertySource;
+        import org.springframework.core.env.Environment;
+        import org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor;
+        import org.springframework.jdbc.datasource.DriverManagerDataSource;
+        import org.springframework.orm.hibernate5.HibernateTransactionManager;
+        import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
+        import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-import org.hibernate.SessionFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.PropertySource;
-import org.springframework.core.env.Environment;
-import org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor;
-import org.springframework.jdbc.datasource.DriverManagerDataSource;
-import org.springframework.orm.hibernate5.HibernateTransactionManager;
-import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
-import org.springframework.transaction.annotation.EnableTransactionManagement;
+        import javax.sql.DataSource;
+        import java.util.Properties;
 
-import javax.sql.DataSource;
-import java.util.Properties;
-
+/**
+ * Hibernate config - settings at hibernate.properties file
+ */
 @Configuration
 @EnableTransactionManagement
-@ComponentScan({"config"})
+@ComponentScan({"erp.config"})
 @PropertySource(value = {"classpath:hibernate.properties"})
 public class HibernateConfig {
     @Autowired
@@ -28,7 +30,7 @@ public class HibernateConfig {
     public LocalSessionFactoryBean sessionFactory() {
         LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
         sessionFactory.setDataSource(dataSource());
-        sessionFactory.setPackagesToScan("erpsystem.entity");
+        sessionFactory.setPackagesToScan("erp.entity");
         sessionFactory.setHibernateProperties(hibernateProperties());
         return sessionFactory;
     }
