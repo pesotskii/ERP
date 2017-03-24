@@ -43,7 +43,7 @@ public class DepartmentDAOImpl implements DepartmentDAO{
         Criteria criteria = sessionFactory.
                 getCurrentSession().
                 createCriteria(Department.class);
-        criteria.add(Restrictions.eq("id", id));
+        criteria.add(Restrictions.eq("ID", id));
         return (Department) criteria.uniqueResult();
     }
 
