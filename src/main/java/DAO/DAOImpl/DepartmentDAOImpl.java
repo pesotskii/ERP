@@ -39,7 +39,7 @@ public class DepartmentDAOImpl implements DepartmentDAO{
     }
 
     @Override
-    public Department getDerparmentById(int id) {
+    public Department getDepartmentById(int id) {
         Criteria criteria = sessionFactory.
                 getCurrentSession().
                 createCriteria(Department.class);
