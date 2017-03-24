@@ -23,7 +23,7 @@ public class ProjectDAOImpl implements ProjectDAO{
 
     @Override
     public void addNewProject(Project pr, String status, String comment, Date launch_date) {
-        status.toUpperCase();
+        status = status.toUpperCase();
         pr.setStatus(status);
         pr.setLaunch_date(launch_date);
         String fullComment = pr.getComment() + "; ++APPROVE COMMENT++: " + comment;
@@ -33,7 +33,7 @@ public class ProjectDAOImpl implements ProjectDAO{
 
     @Override
     public void addNewProject(Project pr, String status, String comment){
-        status.toUpperCase();
+        status = status.toUpperCase();
         pr.setStatus(status);
         String fullComment = pr.getComment() + "; ++APPROVE COMMENT++: " + comment;
         pr.setComment(fullComment);
@@ -74,7 +74,7 @@ public class ProjectDAOImpl implements ProjectDAO{
 
     @Override
     public void changeStatus(Project pr, String new_status) {
-        new_status.toUpperCase();
+        new_status = new_status.toUpperCase();
         pr.setStatus(new_status);
         sessionFactory.getCurrentSession().update(pr);
     }
