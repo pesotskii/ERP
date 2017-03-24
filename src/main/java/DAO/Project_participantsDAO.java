@@ -11,7 +11,7 @@ public interface Project_participantsDAO {
     //участник завершает участие
     void removeParticipant(Project_participants p);
 
-    void changeroleOfParticipant(Project_participants p, String role);
+    void changeRoleOfParticipant(Project_participants p, String role);
 
     List<Project_participants> getAllParticipants();
 
