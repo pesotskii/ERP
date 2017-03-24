@@ -52,6 +52,6 @@ public class DepartmentDAOImpl implements DepartmentDAO{
         Criteria criteria = sessionFactory.
                 getCurrentSession().
                 createCriteria(Department.class);
-        return (List<Department>) criteria.uniqueResult();
+        return (List<Department>) criteria.list();
     }
 }
