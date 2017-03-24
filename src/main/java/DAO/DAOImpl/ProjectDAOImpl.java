@@ -42,6 +42,7 @@ public class ProjectDAOImpl implements ProjectDAO{
 
     @Override
     public void requestNewProject(Project pr) {
+        pr.setStatus("PENDING");
         sessionFactory.getCurrentSession().save(pr);
     }
 
@@ -138,7 +139,8 @@ public class ProjectDAOImpl implements ProjectDAO{
                 createCriteria(Project.class);
         criteria.add(Restrictions.and(
                         Restrictions.le("LAUNCH_DATE", d),
-                        Restrictions.gt("LAUNCH_DATE", d)));
+                        Restrictions.gt("LAUNCH_DATE", d),
+                        Restrictions.eq("STATUS", "ACTIVE")));
         return (List<Project>)criteria.list();
     }
 }
