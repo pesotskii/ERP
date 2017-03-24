@@ -11,9 +11,12 @@ public class Project {
     @Column(name = "ID")
     private int id;
 
-    //должно быть внешним ключом к User
-    @Column(name = "MANAGER")
-    private int manager;
+    @ManyToOne
+    @JoinColumn(name = "MANAGER")
+    private User manager;
+
+    @Column(name = "NAME")
+    private String name;
 
     @Column(name = "LAUNCH_DATE")
     private Date launch_date;
@@ -26,19 +29,6 @@ public class Project {
 
     @Column(name = "COMMENT")
     private String comment;
-/*
-/предлагаю хранить информацию о ресурсах, затраченных на проект, возможно стоит завести отдельную таблицу для этого?
-    @Column
-    private String resources;
-
-    public String getResources() {
-        return resources;
-    }
-
-    public void setResources(String resources) {
-        this.resources = resources;
-    }
-*/
 
     public int getId() {
         return id;
@@ -48,12 +38,12 @@ public class Project {
         this.id = id;
     }
 
-    public int getManager() {
+    public User getManager() {
         return manager;
     }
 
-    public void setManager(int manager) {
-        this.manager = manager;
+    public void setManager(User user) {
+        this.manager = user;
     }
 
     public Date getLaunch_date() {
@@ -88,6 +78,9 @@ public class Project {
         this.comment = comment;
     }
 
-    public Project() {
-    }
+    public String getName() { return name; }
+
+    public void setName(String name) { this.name = name; }
+
+    public Project() {}
 }

@@ -14,8 +14,9 @@ public class Department {
     private String name;
 
     //не уверен о том какое название лучше использовать, опять же это должно быть внешним ключом к таблице USER
-    @Column(name = "HEAD")
-    private int head;
+    @ManyToOne
+    @JoinColumn (name = "HEAD")
+    private User head;
 
     public int getId() {
         return id;
@@ -33,11 +34,11 @@ public class Department {
         this.name = name;
     }
 
-    public int getHead() {
+    public User getHead() {
         return head;
     }
 
-    public void setHead(int head) {
+    public void setHead(User head) {
         this.head = head;
     }
 

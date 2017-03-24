@@ -1,21 +1,19 @@
 package entities;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
 @Table(name = "PROJECT_PARTICIPANTS")
 public class Project_participants {
 
-    //должно быть внешним ключом к Project
-    @Column(name = "PROJECT_ID")
-    private int project_id;
+    @ManyToOne
+    @JoinColumn(name = "PROJECT")
+    private Project project;
 
-    //должно быть внешним ключом к User
-    @Column(name = "USER_ID")
-    private int user_id;
+    @ManyToOne
+    @JoinColumn(name = "USER")
+    private User user;
 
     @Column(name = "START_DATE")
     private Date start_date;
@@ -23,24 +21,22 @@ public class Project_participants {
     @Column(name = "FINISH_DATE")
     private Date finish_date;
 
-    @Column(name = "ROLE")
-    private String role;
+    @Column(name = "PROJECT_ROLE")
+    private String p_role;
 
-    public int getProject_id() {
-        return project_id;
+    public Project getProject() {
+        return project;
     }
 
-    public void setProject_id(int project_id) {
-        this.project_id = project_id;
+    public void setProject(Project project) {
+        this.project = project;
     }
 
-    public int getUser_id() {
-        return user_id;
+    public User getUser() {
+        return user;
     }
 
-    public void setUser_id(int user_id) {
-        this.user_id = user_id;
-    }
+    public void setUser(User user) { this.user = user; }
 
     public Date getStart_date() {
         return start_date;
@@ -58,14 +54,13 @@ public class Project_participants {
         this.finish_date = finish_date;
     }
 
-    public String getRole() {
-        return role;
+    public String getP_role() {
+        return p_role;
     }
 
-    public void setRole(String role) {
-        this.role = role;
+    public void setP_role(String role) {
+        this.p_role = role;
     }
 
-    public Project_participants() {
-    }
+    public Project_participants() {}
 }

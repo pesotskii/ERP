@@ -11,11 +11,9 @@ public class User {
     @Column(name = "ID")
     private int id;
 
-    @Column(name = "ROLE")
-    //это пока заготовка - мы не разбирали как правильно в JPA делать внешние ключи, потом переделаю
-    //@ManyToOne
-    //@JoinColumn(foreignKey = @ForeignKey(name = "ROLE_ID"))
-    private int role;
+    @ManyToOne
+    @JoinColumn(name = "ROLE")
+    private Role role;
 
     @Column(name = "FIRST_NAME")
     private String first_name;
@@ -23,22 +21,22 @@ public class User {
     @Column(name = "LAST_NAME")
     private String last_name;
 
-    @Column(name = "MANAGER")
-    //предположительно нужно тоже сделать внешним ключом
-    private int manager;
+    @ManyToOne
+    @JoinColumn(name = "MANAGER")
+    private User manager;
 
-    @Column(name = "DEPARTMENT")
-    //аналогично это должен быть внешний ключ
-    private int department;
+    @ManyToOne
+    @JoinColumn(name = "DEPARTMENT")
+    private Department department;
 
-    @Column(name = "Status")
+    @Column(name = "STATUS")
     private String status;
 
-    @Column(name = "START_DATE")
-    private Date start_date;
+    @Column(name = "HIRE_DATE")
+    private Date hire_date;
 
-    @Column(name = "FINISH_DATE")
-    private Date finish_date;
+    @Column(name = "FIRE_DATE")
+    private Date fire_date;
 
     public int getId() {
         return id;
@@ -48,11 +46,11 @@ public class User {
         this.id = id;
     }
 
-    public int getRole() {
+    public Role getRole() {
         return role;
     }
 
-    public void setRole(int role) {
+    public void setRole(Role role) {
         this.role = role;
     }
 
@@ -68,25 +66,35 @@ public class User {
         return last_name;
     }
 
-    public void setLast_name(String last_name) {
-        this.last_name = last_name;
-    }
+    public void setLast_name(String last_name) { this.last_name = last_name; }
 
-    public int getManager() {
+    public User getManager() {
         return manager;
     }
 
-    public void setManager(int manager) {
+    public void setManager(User manager) {
         this.manager = manager;
     }
 
-    public int getDepartment() {
+    public Department getDepartment() {
         return department;
     }
 
-    public void setDepartment(int department) {
+    public void setDepartment(Department department) {
         this.department = department;
     }
+
+    public String getStatus() { return status; }
+
+    public void setStatus(String status) { this.status = status; }
+
+    public Date getHire_date() { return hire_date; }
+
+    public void setHire_date(Date hire_date) { this.hire_date = hire_date; }
+
+    public Date getFire_date() { return fire_date; }
+
+    public void setFire_date(Date fire_date) { this.fire_date = fire_date; }
 
     public User(){}
 }
