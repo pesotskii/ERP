@@ -1,6 +1,7 @@
 package DAO;
 
 import entities.Department;
+import entities.Role;
 import entities.User;
 
 import java.util.List;
@@ -10,19 +11,22 @@ public interface UserDAO {
 
     String getFullName(int id);
 
-    void changeRole(User u);
+    void changeRole(User u, Role new_role);
 
-    int getManager(int id);
+    User getManager(int id);
 
     List<User> getUserIdByName(String first_name, String last_name);
 
-    void cahngeStatus(User u);
+    void changeStatus(User u, String new_status);
 
     Department getDepartment(int id);
 
     //увольнение
-    void retireUser(User u);
+    void fireUser(User u);
+
+    //наём
+    void hireUser(User u);
 
     //устранение ошибочной записи
-    void deleteError(User r);
+    void deleteError(User u);
 }
