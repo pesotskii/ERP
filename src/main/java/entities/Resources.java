@@ -20,7 +20,7 @@ public class Resources {
     private Date req_date;
 
     @Column(name = "STATUS")
-    private int status;//=0 -- pending request, =1 -- assigned, =2 -- declined
+    private int status;//=0 -- pending request, =1 -- assigned, =2 -- declined, =3 -- finished
 
     @Column(name = "ASS_DATE")//if resource was assigned to project this field will contain date of assignment
     private Date ass_date;
