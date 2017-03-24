@@ -9,11 +9,11 @@ public interface RoleDAO {
 
     void deleteRole(Role r);
 
-    void changeRoleName(Role r);
+    void changeRoleName(Role r, String new_name);
 
     List<Role> getListOfRoles();
 
-    int getRoleId(String name);
+    Role getRoleByName(String name);
 
-    String getRoleName(int id);
+    Role getRole(int id);
 }
