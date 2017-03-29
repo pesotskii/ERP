@@ -1,23 +1,19 @@
-package controller;
+package erp.controller;
 
-import model.HelloWorld;
+import erp.model.HelloWorld;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
-/**
- * Created by isado on 16.02.2017.
- */
 
 @Controller
 public class AppController {
-    @Autowired
-    HelloWorld helloWorld;
 
-    @RequestMapping("/hello")
+    @RequestMapping(value = "/")
     public String hello(Model model){
-        model.addAttribute("hello", helloWorld.hello());
+        model.addAttribute("hello", "HELLO");
         return "hello";
     }
 }

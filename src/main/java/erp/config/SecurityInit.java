@@ -1,4 +1,4 @@
-package config;
+package erp.config;
 
 import org.springframework.security.web.context.AbstractSecurityWebApplicationInitializer;
 
