@@ -20,7 +20,7 @@ package erp.config;
  */
 @Configuration
 @EnableTransactionManagement
-@ComponentScan({"erp.config"})
+@ComponentScan({"erp/config"})
 @PropertySource(value = {"classpath:hibernate.properties"})
 public class HibernateConfig {
     @Autowired

@@ -1,9 +1,9 @@
-package DAO.DAOImpl;
+package erp.DAO.DAOImpl;
 
 
-import DAO.Project_participantsDAO;
-import entities.Project;
-import entities.Project_participants;
+import erp.DAO.Project_participantsDAO;
+import erp.entities.Project;
+import erp.entities.Project_participants;
 import org.hibernate.Criteria;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
@@ -15,7 +15,7 @@ import java.util.List;
 
 @Repository
 @Transactional
-public class Project_participantsDAOImpl implements Project_participantsDAO{
+public class Project_participantsDAOImpl implements Project_participantsDAO {
     private final SessionFactory sessionFactory;
 
     @Autowired

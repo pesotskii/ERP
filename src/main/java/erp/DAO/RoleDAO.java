@@ -1,6 +1,6 @@
-package DAO;
+package erp.DAO;
 
-import entities.Role;
+import erp.entities.Role;
 
 import java.util.List;
 

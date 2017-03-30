@@ -1,7 +1,7 @@
-package DAO;
+package erp.DAO;
 
-import entities.Project;
-import entities.User;
+import erp.entities.Project;
+import erp.entities.User;
 
 import java.util.Date;
 import java.util.List;

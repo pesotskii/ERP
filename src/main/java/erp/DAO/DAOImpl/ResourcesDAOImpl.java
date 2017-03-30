@@ -1,8 +1,8 @@
-package DAO.DAOImpl;
+package erp.DAO.DAOImpl;
 
-import DAO.ResourcesDAO;
-import entities.Project;
-import entities.Resources;
+import erp.DAO.ResourcesDAO;
+import erp.entities.Project;
+import erp.entities.Resources;
 import org.hibernate.Criteria;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
@@ -15,7 +15,7 @@ import java.util.List;
 
 @Repository
 @Transactional
-public class ResourcesDAOImpl implements ResourcesDAO{
+public class ResourcesDAOImpl implements ResourcesDAO {
     private final SessionFactory sessionFactory;
 
     @Autowired

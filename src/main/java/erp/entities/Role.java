@@ -1,4 +1,4 @@
-package entities;
+package erp.entities;
 
 import javax.persistence.*;
 

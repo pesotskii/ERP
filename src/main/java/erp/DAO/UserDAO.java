@@ -1,8 +1,8 @@
-package DAO;
+package erp.DAO;
 
-import entities.Department;
-import entities.Role;
-import entities.User;
+import erp.entities.Department;
+import erp.entities.Role;
+import erp.entities.User;
 
 import java.util.List;
 
