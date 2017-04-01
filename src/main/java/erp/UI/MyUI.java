@@ -1,4 +1,4 @@
-package UI;
+package erp.UI;
 
 import javax.servlet.annotation.WebServlet;
 
