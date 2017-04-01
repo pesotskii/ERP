@@ -1,8 +1,7 @@
-package DAO;
+package erp.DAO;
 
-import entities.Project;
-import entities.Resources;
-import org.hibernate.criterion.Restrictions;
+import erp.entity.Project;
+import erp.entity.Resources;
 
 import java.util.Date;
 import java.util.List;

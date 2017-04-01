@@ -1,7 +1,7 @@
-package DAO.DAOImpl;
+package erp.DAO.DAOImpl;
 
-import DAO.DepartmentDAO;
-import entities.Department;
+import erp.DAO.DepartmentDAO;
+import erp.entity.Department;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

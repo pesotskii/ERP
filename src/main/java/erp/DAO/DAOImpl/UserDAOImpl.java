@@ -1,9 +1,9 @@
-package DAO.DAOImpl;
+package erp.DAO.DAOImpl;
 
-import DAO.UserDAO;
-import entities.Department;
-import entities.Role;
-import entities.User;
+import erp.DAO.UserDAO;
+import erp.entity.Department;
+import erp.entity.Role;
+import erp.entity.User;
 import org.hibernate.Criteria;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
@@ -12,7 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.util.Date;
 import java.util.List;
 
-public class UserDAOImpl implements UserDAO{
+public class UserDAOImpl implements UserDAO {
     private final SessionFactory sessionFactory;
 
     @Autowired

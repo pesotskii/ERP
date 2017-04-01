@@ -1,8 +1,8 @@
-package DAO.DAOImpl;
+package erp.DAO.DAOImpl;
 
-import DAO.ProjectDAO;
-import entities.Project;
-import entities.User;
+import erp.DAO.ProjectDAO;
+import erp.entity.Project;
+import erp.entity.User;
 import org.hibernate.Criteria;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;

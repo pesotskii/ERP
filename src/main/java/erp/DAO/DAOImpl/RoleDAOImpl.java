@@ -1,7 +1,7 @@
-package DAO.DAOImpl;
+package erp.DAO.DAOImpl;
 
-import DAO.RoleDAO;
-import entities.Role;
+import erp.DAO.RoleDAO;
+import erp.entity.Role;
 import org.hibernate.Criteria;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
@@ -13,7 +13,7 @@ import java.util.List;
 
 @Repository
 @Transactional
-public class RoleDAOImpl implements RoleDAO{
+public class RoleDAOImpl implements RoleDAO {
     private final SessionFactory sessionFactory;
 
     @Autowired
