@@ -9,13 +9,11 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 
-/**
- * Created by isado on 16.02.2017.
- */
+
 
 @Configuration
 @EnableWebMvc
-@ComponentScan("erp.controller")
+@ComponentScan("erp.*")
 public class WebConfig extends WebMvcConfigurerAdapter {
     @Bean
     public InternalResourceViewResolver setupViewResolver() {
