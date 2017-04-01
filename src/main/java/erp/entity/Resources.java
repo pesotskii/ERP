@@ -13,7 +13,6 @@ public class Resources {
     private int id;
 
     @ManyToOne
-    @JoinColumn(name = "PROJECT")
     private Project project;
 
     @Column(name = "REQ_DATE")

@@ -13,11 +13,9 @@ public class Project_participants {
     private int id;
 
     @ManyToOne
-    @JoinColumn(name = "PROJECT")
     private Project project;
 
     @ManyToOne
-    @JoinColumn(name = "USER")
     private User user;
 
     @Column(name = "START_DATE")

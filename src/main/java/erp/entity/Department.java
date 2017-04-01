@@ -15,7 +15,6 @@ public class Department {
 
     //не уверен о том какое название лучше использовать, опять же это должно быть внешним ключом к таблице USER
     @ManyToOne
-    @JoinColumn (name = "HEAD")
     private User head;
 
     public int getId() {

@@ -12,7 +12,6 @@ public class User {
     private int id;
 
     @ManyToOne
-    @JoinColumn(name = "ROLE")
     private Role role;
 
     @Column(name = "FIRST_NAME")
@@ -22,11 +21,9 @@ public class User {
     private String last_name;
 
     @ManyToOne
-    @JoinColumn(name = "MANAGER")
     private User manager;
 
     @ManyToOne
-    @JoinColumn(name = "DEPARTMENT")
     private Department department;
 
     @Column(name = "STATUS")

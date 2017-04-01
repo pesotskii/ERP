@@ -12,7 +12,6 @@ public class Project {
     private int id;
 
     @ManyToOne
-    @JoinColumn(name = "MANAGER")
     private User manager;
 
     @Column(name = "NAME")
