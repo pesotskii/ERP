@@ -7,6 +7,11 @@ import java.util.Date;
 @Table(name = "PROJECT_PARTICIPANTS")
 public class Project_participants {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "ID")
+    private int id;
+
     @ManyToOne
     @JoinColumn(name = "PROJECT")
     private Project project;
