@@ -32,8 +32,7 @@ public class LoginUI extends UI {
         password.setCaption("password");
         Button button = new Button("Log in");
         button.addClickListener( e -> {
-            layout.addComponent(new Label("Thanks " + name.getValue()
-                    + ", it works!"));
+           getPage().setLocation("/mainPage");
         });
         layout.addComponents(name, password, button);
         setContent(layout);

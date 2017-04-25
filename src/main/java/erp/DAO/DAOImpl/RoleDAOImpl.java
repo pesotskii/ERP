@@ -1,6 +1,7 @@
 package erp.DAO.DAOImpl;
 
 import erp.DAO.RoleDAO;
+import erp.config.HibernateUtil;
 import erp.entity.Role;
 import org.hibernate.Criteria;
 import org.hibernate.SessionFactory;
@@ -14,10 +15,11 @@ import java.util.List;
 @Repository
 @Transactional
 public class RoleDAOImpl implements RoleDAO {
-    private final SessionFactory sessionFactory;
+    private  SessionFactory sessionFactory;
 
-    @Autowired
-    public RoleDAOImpl(SessionFactory sessionFactory) { this.sessionFactory = sessionFactory; }
+
+    public RoleDAOImpl(){ this.sessionFactory = HibernateUtil.getSessionFactory(); }
+
 
     @Override
     public void addRole(Role r) {

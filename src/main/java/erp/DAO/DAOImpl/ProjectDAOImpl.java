@@ -1,6 +1,7 @@
 package erp.DAO.DAOImpl;
 
 import erp.DAO.ProjectDAO;
+import erp.config.HibernateUtil;
 import erp.entity.Project;
 import erp.entity.User;
 import org.hibernate.Criteria;
@@ -16,10 +17,10 @@ import java.util.List;
 @Repository
 @Transactional
 public class ProjectDAOImpl implements ProjectDAO{
-    private final SessionFactory sessionFactory;
+    private  SessionFactory sessionFactory;
 
-    @Autowired
-    public ProjectDAOImpl(SessionFactory sessionFactory) { this.sessionFactory = sessionFactory; }
+
+    public ProjectDAOImpl(){ this.sessionFactory = HibernateUtil.getSessionFactory(); }
 
     @Override
     public void addNewProject(Project pr, String status, String comment, Date launch_date) {

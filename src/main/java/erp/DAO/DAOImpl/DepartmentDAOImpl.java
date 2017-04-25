@@ -1,6 +1,7 @@
 package erp.DAO.DAOImpl;
 
 import erp.DAO.DepartmentDAO;
+import erp.config.HibernateUtil;
 import erp.entity.Department;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
@@ -15,10 +16,10 @@ import java.util.List;
 @Repository
 @Transactional
 public class DepartmentDAOImpl implements DepartmentDAO{
-    private final SessionFactory sessionFactory;
+    private  SessionFactory sessionFactory;
 
-    @Autowired
-    public DepartmentDAOImpl(SessionFactory sessionFactory){ this.sessionFactory = sessionFactory; }
+
+    public DepartmentDAOImpl(){ this.sessionFactory = HibernateUtil.getSessionFactory(); }
 
     @Override
     public void addDepartment(Department dep) {

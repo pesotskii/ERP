@@ -12,6 +12,7 @@ import com.vaadin.ui.TextField;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
 
+
 /**
  * This UI is the application entry point. A UI may either represent a browser window
  * (or tab) or some part of a html page where a Vaadin application is embedded.
@@ -27,16 +28,16 @@ public class MyUI extends UI {
     protected void init(VaadinRequest vaadinRequest) {
         final VerticalLayout layout = new VerticalLayout();
 
-        final TextField name = new TextField();
-        name.setCaption("Type your name here:");
 
-        Button button = new Button("Click Me");
-        button.addClickListener( e -> {
-            layout.addComponent(new Label("Thanks " + name.getValue()
-                    + ", it works!"));
+        Button buttonReg = new Button("Registration");
+        buttonReg.addClickListener( e -> {
+            getPage().setLocation("/registration");
         });
-
-        layout.addComponents(name, button);
+        Button buttonLogin = new Button("Log in");
+        buttonLogin.addClickListener( e -> {
+            getPage().setLocation("/trylogin");
+        });
+        layout.addComponents(buttonReg,buttonLogin);
 
         setContent(layout);
     }

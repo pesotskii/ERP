@@ -2,6 +2,7 @@ package erp.DAO.DAOImpl;
 
 
 import erp.DAO.Project_participantsDAO;
+import erp.config.HibernateUtil;
 import erp.entity.Project;
 import erp.entity.Project_participants;
 import org.hibernate.Criteria;
@@ -16,10 +17,11 @@ import java.util.List;
 @Repository
 @Transactional
 public class Project_participantsDAOImpl implements Project_participantsDAO{
-    private final SessionFactory sessionFactory;
+    private  SessionFactory sessionFactory;
 
-    @Autowired
-    public  Project_participantsDAOImpl(SessionFactory sessionFactory) { this.sessionFactory = sessionFactory; }
+
+    public Project_participantsDAOImpl(){ this.sessionFactory = HibernateUtil.getSessionFactory(); }
+
 
     @Override
     public void addNewParticipant(Project_participants p) {

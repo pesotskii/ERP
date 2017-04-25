@@ -1,36 +1,51 @@
 package erp.DAO.DAOImpl;
 
 import erp.DAO.UserDAO;
+import erp.config.HibernateUtil;
 import erp.entity.Department;
 import erp.entity.Role;
 import erp.entity.User;
 import org.hibernate.Criteria;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Date;
 import java.util.List;
 
+@Repository
+@Transactional
 public class UserDAOImpl implements UserDAO {
-    private final SessionFactory sessionFactory;
+    private SessionFactory sessionFactory;
 
-    @Autowired
-    public UserDAOImpl(SessionFactory sessionFactory) { this.sessionFactory = sessionFactory; }
+    // for dev
+    public UserDAOImpl() {
+        sessionFactory = HibernateUtil.getSessionFactory();
+    }
+
+    // for tests
+    public UserDAOImpl(SessionFactory sessionFactory) {
+        this.sessionFactory = sessionFactory;
+    }
 
     @Override
     public void addUser(User u) {
-        sessionFactory.getCurrentSession().save(u);
+        Transaction tx = null;
+       Session session = sessionFactory.openSession();
+       tx = session.beginTransaction();
+       session.save(u);
+       tx.commit();
     }
 
     @Override
     public String getFullName(int id) {
-        Criteria criteria = sessionFactory
-                .getCurrentSession()
-                .createCriteria(User.class);
-        criteria.add(Restrictions.eq("ID", id));
-        User u = (User)criteria.uniqueResult();
-        return u.getFirst_name() + u.getLast_name();
+        Session session = sessionFactory.openSession();
+            User user = session.get(User.class,id);
+        return user.getFirst_name() + user.getLast_name();
     }
 
     @Override

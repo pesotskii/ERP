@@ -1,6 +1,7 @@
 package erp.DAO.DAOImpl;
 
 import erp.DAO.ResourcesDAO;
+import erp.config.HibernateUtil;
 import erp.entity.Project;
 import erp.entity.Resources;
 import org.hibernate.Criteria;
@@ -16,10 +17,11 @@ import java.util.List;
 @Repository
 @Transactional
 public class ResourcesDAOImpl implements ResourcesDAO{
-    private final SessionFactory sessionFactory;
+    private  SessionFactory sessionFactory;
 
-    @Autowired
-    public ResourcesDAOImpl(SessionFactory sessionFactory) { this.sessionFactory = sessionFactory; }
+
+    public ResourcesDAOImpl(){ this.sessionFactory = HibernateUtil.getSessionFactory(); }
+
 
     @Override
     public void requestResource(Resources res) {
